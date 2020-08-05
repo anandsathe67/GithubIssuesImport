@@ -3,8 +3,8 @@ const path = require('path')
 const neatCsv = require('neat-csv')
 const { Octokit } = require("@octokit/rest")
 
-const GIT_REPO_OWNER = 'cheaseed'
-const GIT_REPO = 'cheaseed-prototype'
+const GIT_REPO_OWNER = 'anandsathe67'
+const GIT_REPO = 'GithubIssuesImport'
 const PERSONAL_ACCESS_TOKEN = '9f3c726967fd547c2892921b4e1fd41017d26ac6'
 
 const octokit = new Octokit({
@@ -81,7 +81,7 @@ async function createMilestone(title) {
 async function createIssue(csvIssue, milestoneId, assignees) {
     let labels = []
     if (csvIssue.Priority) {
-        labels.push('Priority: ' + csvIssue.Priority)
+        labels.push('Priority:' + csvIssue.Priority)
     }
     if (csvIssue['Issue Type']) {
         labels.push(csvIssue['Issue Type'])
