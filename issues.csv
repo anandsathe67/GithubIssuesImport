@@ -1,0 +1,372 @@
+Name,Issue Type,Priority,Rank,Status,Opened Time,Days old,Attachments,Assigned to,Progress Comments,Description,Duplicates?,Bug source,Associated features,Created by,Date Completed,Minutes To Completion
+"SHARE: Ability to Share a CHEA SEED content (Statement, Tile....) to operating system (social media, texting or email)",New Feature,Critical,1,In progress,1/13/2020 8:25am,201,,,,Getting direction from Vamsi ETA Friday evening,,,,,,
+"SHARE GUIDES and SCRIPTS: sharing out the guides and scripts; 
+web page landings for scripts and guides at cheaseed.com so we can count hits by each item",New Feature,Critical,1,In progress,1/13/2020 12:14pm,201,,,"4.17.2020 We propose adjustments to the button at the bottom of the screen. We'd like two buttons. 
+- A button on the left that is chea seed pink (#E0098A) with bold, black text. The text for this button is ""Join our beta"" 
+- A button on the right side of the page that is black with bold white text. This button will say ""Learn about chea seed"" 
+- A question we have is which pages will these buttons take you to?
+----------------------
+Share a link of a dynamic page that displays a single statement in a frame; include tracking of page views
+
+6.30.2020 Update to track at firebase and mixpanel.",,,,,,,
+INFRASTRUCTURE: A chea seed web page. Includes waitlist sign up for future beta testers and Content Web Page for Non App Users from Share (based on Statement). See description.,New Feature,Critical,1,In progress,1/17/2020 6:07pm,196,,Adam Galper,"Fix the home page, remove everything below signup to beta list.","From 3.23.2020 Meeting: 
+We need to design this page: Content Web Page for Non App Users from Share (based on Statement)
+Include on it “Sign up here to join the waitlist”
+
+OR
+
+On the chea seed website, we want to have: this is what we are, here is the waitlist, sign up here to be on the waitlist for testing the beta. 
+----------------------------------------------
+1.16.2020 A chea seed web page. Includes waitlist sign up for future beta testers and Content Web Page for Non App Users from Share (based on Statement). See description.
+
+1.16.2020 chea seed web page: Beta tester can invite others to chea seed and they can sign up and join a wait list",,,,,,
+CHEA SEED WEBSITE: Changes to cheaseed.co discussed on 7/16/2020,New Feature,Critical,1,In progress,7/16/2020 5:51pm,15,,,,"Cleaned up document with website mockups and specifics: https://docs.google.com/document/d/1F3avqrr9QRyJ8UM8SxNihypRY6chsXDMw3eRFa4qRgM/edit?usp=sharing
+- If you would like me to break the document out within this issue, let me know- NJ
+
+cheaseed.co homepage
+- on the homepage there is an ""About us"" accordion
+
+confirmation page
+- on the confirmation page there is a generic shareable link at the bottom 
+
+guide/script landing pages
+- the cheaseed.co link at the bottom of the page directs the user to the homepage. 
+- If the user signs up from the landing page, she is directed to the confirmation page. 
+
+We will also want to make sure cheaseed.com redirects to cheaseed.co rather than https://chea3.webflow.io/
+
+",,,,,,
+ADVANCED TOOLS: Exporting users data and reimporting users data,New Feature,Critical,2,In progress,2/14/2020 6:16pm,168,,Adam Galper,,Exporting users data and reimporting users data. This will address the requirement of managing and maintaining demo users over time.,,,,,,
+ADVANCED TOOLS: A webpage (github?) for reviewing the Choose Your Journey sequence advisor. ,New Feature,Critical,2,In progress,5/29/2020 10:55am,64,,,See https://cheaseed.github.io/cheaseed-prototype/,We discussed posting the Choose Your Journey sequence advisor code to a webpage (I think we said as part of our current github?) so Nicole can review and confirm it is executing the logic as we expect. ,,,,,,
+RULES for Newsflash,New Feature,Critical,3,Ready for Review (on dev),1/16/2020 1:58pm,198,,,"7.14.2020 We've tested, and it looks done, but we want to continue testing so we have not marked as complete. 
+-----
+Document rules
+Deal with numeric badge on icon
+Format messages page
+Handle expirations",https://docs.google.com/document/d/1k_Fpj0T3aJ2WB9bhFpFDcnaK4Ntgy3YxGJTo9aEFKs4/edit?usp=sharing,,,,,,
+RULES for UpNext,New Feature,Critical,3,Ready for Review (on dev),6/3/2020 6:31pm,58,,,"7.14.2020 Can we accelerate the fixed schedule to 2 hours for testing period? This will also help with testing if cards start falling off at 20 b/c it's hard for us to get our UpNext to 20. 
+
+Evaluate UpNext size on user remove.
+
+Pull first Master chat that's not consumed. Pull first Engagement chat that's not consumed. When there are none of either, do nothing.
+
+Store user key for LastWeeklyUpNextRefillDate. On Home tab selection, check if current date is >, if so populate UpNext as above and reset user key.","NEW UpNext Rules (from Problem Statements v.3 doc) 
+1. When there is only 1 card remaining in UpNext, we populate UpNext with 1 chat from the Master Sequence and 1 chat from the Engagement Sequence. 
+2. Each week, on a fixed schedule, and independent of whether she is consuming content or not, we populate UpNext with 1 chat from the Master Sequence and 1 chat from the Engagement Sequence. 
+    a. The week is based off of her user create date
+    b. Engagement is loaded 2nd (positioned 1st)
+3. When a user consumes a chat, independent of where she finds the chat, the Master Sequence and/or the Engagement Sequence skip that chat when populating UpNext. 
+    a. If you have consumed something in the past through whatever means, skip it in the Master or Engagement Sequence.
+4. No expiration dates on the UpNext.
+    a. Once UpNext reaches 20 cards, the oldest cards fall off. 
+
+ALREADY IMPLEMENTED UpNext Rules
+1. When in a chat, and a QueueAction queues chats into UpNext.
+2. When she goes through Choose Your Journey or adds another Series to her playlist, the very first of her playlist is always in UpNext. ",,,,,,
+MESSAGING RULES: Provide immediate feedback for EntryMilestoneRule instances,New Feature,Critical,3,In progress,7/5/2020 3:57pm,27,,Adam Galper,"For TakeCreditEntryRule and SatisfactionEntryRule we get Newsflashes, but we don't get a dialog. ","1. When entry milestones are reached, provide a dialog with immediate feedback rather than a notification.",,,,,,
+UPNEXT: Unknown card showing up in UpNext,Functional Bug,Critical,4,New,7/18/2020 2:24pm,14,Image from iOS (2).png (https://dl.airtable.com/.attachments/95e3e3588dee04a5b8301be17281d0a0/e80fd568/ImagefromiOS2.png),,,The UNKNOWN Chat card displayed in UpNext after consuming a chat,,,,,,
+"TAKEAWAY TILES: SMS sharing:  When I share a Tile from the homepage, the tile is sending an empty image with text. When I share a Tile from the takeaway tile landing page, an image and the text are sending. ",Functional Bug,Critical,6,In progress,7/14/2020 4:14pm,18,,,"7.22.2020 If we can get the external links to the website to work for sharing, then this goes away. We will instead generate canva tiles for all of the takeaway and we will make these all available. We will be sharing links, we won't be sharing images. 
+
+Can't reproduce. What does ""an empty image with text"" mean? Is there text in the message or in the message? provide some images",,,,,,,
+"LOGIC FOR CHECKING CONTENT: When the app comes into the foreground and every hour, check if new published content is available and reload",New Feature,Critical,8,Ready for Review (on dev),7/20/2020 5:03pm,11,,,,"- We discussed having a way for the app to check if new published content is available and reload
+    - Performing this check when the app comes into the foreground, and every hour. 
+",,,,,,
+NOTIFICATIONS: Change Messages to Notifications in the title bar on the Notifications page,UI Fix,Critical,10,Ready for Push,7/27/2020 2:48pm,5,"Screen Shot 2020-07-27 at 2.48.00 PM.png (https://dl.airtable.com/.attachments/1e67696e59d24f6d921bd5cc9f0e7f2f/72a37f17/ScreenShot2020-07-27at2.48.00PM.png),Screen Shot 2020-07-27 at 2.49.23 PM.png (https://dl.airtable.com/.attachments/f045c3b07013c0347ba619dd393fccdc/7118987d/ScreenShot2020-07-27at2.49.23PM.png)",,,,,,,,,
+"SHARE: On the Inspiration carousel, can we make the share icon a little larger?",UI Fix,Critical,10,Ready for Push,7/30/2020 3:09pm,2,,,,,,,,,,
+"CONDITIONAL FORMATTING: Extend conditional formatting to support multioption attributes and ""null"". See description for example.",New Feature,High,1,Ready for Review (on dev),6/17/2020 6:02pm,44,,Nicole Johnson,"If she chose Friends OR Family AND current colleague OR past colleagues OR people from industry events OR alumnae contacts: ""Right on for including family and work in your network.""
+
+==> {{#if (and (equalsOneOf ""key"" ""[ 'friends', 'family' ]"" )
+												(equalsOneOf ""key"" ""[ 'current' 'past', 'people', 'alumnae' ]""))											
+         }} This {{else}}That {{/if}}
+
+If she chose Friends OR Family AND not current colleague OR past colleagues OR people from industry events OR alumnae contacts: ""Friends and family are amazing for building our networks."" 
+
+==> {{#if (and (equalsOneOf ""key"" ""[ 'friends', 'family' ]"" )
+                         (equalsNoneOf ""key"" ""[ 'current', 'past', 'people', 'alumnae' ]""))
+         }} This {{else}}That {{/if}}
+
+If current colleague OR past colleagues OR people from industry events OR alumnae contacts AND not Friends AND not family: ""Building our networks through work relationships is terrific.""
+
+==> {{#if (and (equalsOneOf ""key"" ""[ 'current', 'past', 'people', 'alumnae' ]""))
+                         (equalsNoneOf ""key"" ""[ 'friends', 'family' ]""))
+         }} This {{else}}That {{/if}}
+","Example of Multioption conditional
+From Know Your Network, statements 9-11
+STATEMENT 4
+Think about your network. Who does your network include? (Choose all that apply)
+[ ] Friends 
+[ ] Current colleague
+[ ] Past colleagues 
+[ ] People met at industry events
+[ ] Family
+[ ] Alumnae/i contacts
+[ ] Other
+
+STATEMENT 5
+For ALL: ""Networking is about building relationships in your personal life AND at work. There are no boundaries.""
+
+If she chose Friends OR Family AND current colleague OR past colleagues OR people from industry events OR alumnae contacts: ""Right on for including family and work in your network.""
+
+If she chose Friends OR Family AND not current colleague OR past colleagues OR people from industry events OR alumnae contacts: ""Friends and family are amazing for building our networks."" 
+
+If current colleague OR past colleagues OR people from industry events OR alumnae contacts AND not Friends AND not family: ""Building our networks through work relationships is terrific.""
+
+If not any: NOTHING
+
+Example of Null Conditional
+{{#if (equals ""QueenBee.knowAQueen"" ""no"")}}
+That’s very lucky for you.
+{{else}}
+{{#if (equals ""QueenBee.knowAQueen"" ""notSureQueenBee"")}}
+Queen Bees are women bullies who target women usually at a lower level, but even at their own level.
+{{else}}
+{{#if (equals ""QueenBee.knowAQueen"" ""null"")}}
+That’s very lucky for you.    
+{{else}}
+{{/if}}
+{{/if}}
+{{/if}}",,,,,,
+CHAT: Review the logic for the Why Ask At All chat,Functional Bug,High,1,,7/2/2020 7:24am,30,,Nicole Johnson,,Do I have the functions to execute the logic using @countresponses?,,,,,,
+"When the last statement of a chat contains logic (enableIf), the last card of a chat appears blank.",Functional Bug,High,1,,7/8/2020 2:42pm,24,,Nicole Johnson,,"Save or spend
+Career moment
+Covid19 networking now
+Mindset quiz
+- Job offer followup",,,,,,
+HOMEPAGE: A welcome message dialog to displays the first time a user comes into the app,New Feature,High,1,,7/9/2020 2:50pm,23,"image (7).png (https://dl.airtable.com/.attachments/d2ff9c98fd7ed331cc0fdbc7d2f119aa/4dafc839/image7.png),image (8).png (https://dl.airtable.com/.attachments/2650e122d594de8e7afe9e6968a900c9/16ef8686/image8.png)",,,Many of the Interactive Fiction apps start with a Welcome message. Should we have a welcome popup?,,,,,,
+ELLIPSIS MENU ON CHAT CARDS: Enlarge the area of the ellipsis menu on chat cards so there is a bigger finger target,New Feature,High,2,In progress,7/8/2020 4:31pm,24,,,,"Move icon out of grid and make it flush top and right in a fixed size rect; then put grid for card contents below
+",,,,,,
+PITCH: Show the number of practices or deliveries associated with each Pitch on the card in the Entry List (Section List).,New Feature,High,2,,7/10/2020 9:31pm,21,"IMG_9205 (1).JPG (https://dl.airtable.com/.attachments/75497d21cf3282c9835742956c651c61/6b417404/IMG_92051.JPG),IMG_8824.JPG (https://dl.airtable.com/.attachments/b15f911a05f97de65b8c0cc4b7e5fd1a/94d47144/IMG_8824.JPG)",,,,,,,,,
+COMPLETION CARD: The background of the Completion Card is short at the bottom of the screen,UI Fix,High,3,,5/18/2020 11:18pm,74,"Screen Shot 2020-05-18 at 9.46.56 AM.png (https://dl.airtable.com/.attachments/178d459925ca8d1e3e06f57b531f052b/0778cbeb/ScreenShot2020-05-18at9.46.56AM.png),Screen Shot 2020-05-18 at 11.10.04 PM.png (https://dl.airtable.com/.attachments/970db5f9616f1f570fdf2ed148e4f37b/923da074/ScreenShot2020-05-18at11.10.04PM.png)",Aaron Galper,,"6.9.2020 Wait to complete
+
+We propose the background extend the full height of each phone screen.",,,,Nicole Johnson,,
+UI FIX: Light/Dark mode- fixing all pages ,UI Fix,High,3,,6/9/2020 11:08am,53,,Aaron Galper,,"6.9.2020 Wait to complete
+- Go over the screens very carefully. 
+- Look at every screen: what do we need to change for certain screens?
+    - document the changes we need to make, present them.",,,,Nicole Johnson,,
+ADVANCED TOOLS: Advanced page: Add reload content into environment (dev or master),New Feature,High,4,In progress,3/6/2020 2:30pm,148,,Adam Galper,,Tool will trigger a webhook with the name of the Amplify environment (dev); webhook will invoke the airtable extraction and import scripts into the target environment. This will allow Nicole to edit and test more rapidly.,,,,,,
+"CHAT FUNCTIONALITY: When in a statement that includes an attributeSpec, can we have a block of text that appears at the bottom of the screen when an option is selected/pressed on. ",New Feature,High,4,,3/19/2020 7:22am,135,Screen Shot 2020-03-13 at 3_27_16 PM.png (https://dl.airtable.com/.attachments/fe40a5b9e67dcd88ccb32ae6559b809f/5884871d/ScreenShot2020-03-13at3_27_16PM.png),,"Beta 2
+
+Add an ifSelectedMessage field to the Option","See attachment of Vamsi's mock up. 
+If possible, we'd like to have a way to display a block of text on a Statement screen that includes an attributeSpec. Giselle has written content that says: ""Press to see how each of your actions contributes to the Career Revolution.""",,,,Nicole Johnson,,
+An Accomplishment Report View,New Feature,High,4,,4/8/2020 5:29pm,114,,,Beta 2,The Accomplishment Report View would include a view of different Accomplishments the user has selected. She could generate a report with all of the information about the Accomplishments she's entered so far. ,,"We discussed this late 2019/early 2020, but we didn't formally document the issue until April 2020.",,Nicole Johnson,,
+"CAREER SECTION: in Edit Entry, when one block is opened, the other blocks all close. ",New Feature,High,4,,5/11/2020 1:03pm,82,,,Beta 2,"We propose only one block be open at a time in Edit Entry. So when she opens the Feelings block, the Basics and Details blocks automatically close. ",,,,Nicole Johnson,,
+ENTRY VIEW HEADER GRID: Add all attributes in Basics of each Entry Type into the header grid of the Entry View.,New Feature,High,4,,5/18/2020 11:29pm,74,,,,"We propose that for each Entry Type with an Entry View (Accomplishment, Shoutout, Pitch, Ask, Goal) we add all of the attributes in the Basics block to the Header Grid of the Entry View.",,,,,,
+HOMEPAGE: Explore changing the height and width of the Inspiration Takeaway Tile to match the height and width of the Takeaway Tile ,New Feature,High,4,,6/10/2020 11:16am,52,Screen Shot 2020-06-10 at 11.15.46 AM.png (https://dl.airtable.com/.attachments/4df9bb2c73f9adbf7eda693af5f5fb11/aef772c7/ScreenShot2020-06-10at11.15.46AM.png),,,Inspiration Takeaway Tile on the homepage is different than the tiles in the takeaway tile section. One thought is to change the Inspiration Takeaway Tile to the same height and width so it is also a square on the homepage. ,,,,,,
+SHARING: Expand our sharing capabilities across different platforms over time,New Feature,High,4,,6/10/2020 12:05pm,52,,,,"See this sheet
+We looked at other apps and stores to see how they handle sharing. Some app (airbnb) handles sharing from their app to many other ios apps and other social media apps. Other apps handle sharing via IOS to (sephora to slack, insta to slack) less thoroughly.
+Priority for the platforms we want to share to:
+- Messages #1 (done)
+- Insta #2 (done)
+- Slack #3
+- copy link",,,,,,
+"STATS: Should Stats chats be different for the user that is completing the chat for the 2nd, 3rd, nth time?",New Feature,High,4,,6/30/2020 11:24am,32,,,,,,,,,,
+CAREER PLAN: cross reference add Career plan from introduce yourself into Career Plan topic?,New Feature,High,4,,6/30/2020 11:25am,32,,"Giselle Galper,Nicole Johnson",,,,,,,,
+Greeting Tiles: Implement rule based Greeting Tiles that populate the Inspiration carousel on the homepage. ,New Feature,High,4,,7/2/2020 7:10am,30,,,,"Greeting Tiles would populate the inspiration carousel based on rules related to a users time in the app (anniversary, every week, etc) or a users activity (has 10 accomplishments entered, consumed 10 chats, tracked her satisfaction)
+
+https://docs.google.com/document/d/1k_Fpj0T3aJ2WB9bhFpFDcnaK4Ntgy3YxGJTo9aEFKs4/edit#heading=h.f226soitwk8l
+
+https://docs.google.com/document/d/1v-SRjqZt26_hSRw4itvBgfIIiIvFnrRFiPURaU4-DXU/edit?usp=sharing",,,,,,
+QUICK ADD: Practice or Deliver Pitch/Ask quick add,New Feature,High,4,New,7/13/2020 1:19pm,19,,,Sorry -- Why should the user be sent to the View Entry page? Why create another exception to the logical flow?,"Purpose of this new feature: 
+Currently when a user adds a new Pitch or Ask from the Quick Add, she can only add a Practice or Delivery Pitch/Ask by going to the corresponding Entry List in the Career section. We want the user to have a quick and easy way to add a Practice or Deliver Pitch/Ask following the add of a Pitch/Ask entry in Quick Add. 
+
+Proposal: 
+When coming from a Quick Add for Pitch or Ask, prompt the user with a dialog asking the user if she would like to add a Practice or Deliver. Once the user completes the Practice or Deliver entry, return the user to where she started the Quick Add. ",,,,,,
+HOMEPAGE: Change the progress bar on Chat cards to being a circle or something that doesn’t have a percentage so there is more room on the card.,UI Fix,High,5,,3/9/2020 1:36pm,145,,Adam Galper,,"3/16/2020 We don't have a mock up from Vamsi for this, but we discussed removing the progress bar in Chats to Complete to make room for adding the Series title. We weren't sure if the series title and progress indicator would all fit onto one card, but a progress circle is an idea we discussed.",,,,Nicole Johnson,,
+ESSENTIALS: New changes to the Reflect section of Essentials,UI Fix,High,5,,4/17/2020 3:15pm,106,,,4.17.2020 We will discuss again when we are ready to implement,See this link for visual of what we propose: https://docs.google.com/document/d/19wfDbXomB3l7TpaoPozHjfQx-xNbBBxjYSpc5idIVD0/edit?usp=sharing,,,,Nicole Johnson,,
+"UI SCRUB: Remove the ""Updated x hours ago"" message from all places in the app. Instead use the date the entry is created. ",UI Fix,High,5,In progress,4/17/2020 3:19pm,106,,Aaron Galper,"I don't remember discussing this. I thought we just wanted to remove ""Updated X hrs ago"" from the collection cards.",,,,,,,
+"UI SCRUB: Add the date an entry is created in place of where ""Updated x hours ago"" message was",UI Fix,High,5,,4/18/2020 3:28pm,105,,Aaron Galper,"I don't remember discussing this. I thought we just wanted to remove ""Updated X hrs ago"" from the collection cards.",,,,,,,
+HOMEPAGE: Add Series title to Chat cards. See description. ,New Feature,High,6,,3/6/2020 3:22pm,148,,Adam Galper,,"3/16/2020 We don't have a mock up from Vamsi for this, but we discussed removing the progress bar in In Progress to make room for adding the Series title. We weren't sure if the series title and progress indicator would all fit onto one card, but a progress circle is an idea we discussed. See issue below for info on the progress bar. ",,,,,,
+A notification to the user that she needs to have a Goal before entering a Motivation or Objective,Content Fix,High,6,,4/8/2020 5:22pm,114,,"Nicole Johnson,Giselle Galper",,"Right now a user can try to enter a motivation or objective without a goal, but the goal is a required field for objective. It is an optional field for motivation, but a goal is required if she wants her motivation to display in her Career Plan. ",,,,,,
+CAREER SECTION: Satisfaction counter not populating accurately. ,Functional Bug,High,6,,5/4/2020 3:14pm,89,,,,"Giselle's counter wasn't counting the number of Satisfaction entries she has correctly. Meaning the number in the pink circle only indicated 1 entry, when Giselle had 3.  NJ to follow up on this and check if it is still occurring",,testing app,,Nicole Johnson,,
+"When she edits an already saved entry, the Submit button should already be lit up/not greyed out because all of the required fields are entered",Functional Bug,High,6,,5/18/2020 10:19am,75,,,5.18.2020 The button stays greyed out if you make no changes to an already submitted entry b/c there are no new changes to save. The button lights up if you make a change to the one of the fields in the Edit Entry. ,,,,,,,
+"STATS: Market Savvy Stats settings and card: archiving cards, what happens after all 9 boxes are complete.",New Feature,High,6,,6/5/2020 6:41pm,56,"IMG_9037.JPG (https://dl.airtable.com/.attachments/511afa3ac39f8de5c30a025b6dba7560/ce30d2aa/IMG_9037.JPG),IMG_9036.JPG (https://dl.airtable.com/.attachments/3925b011c2e62b496986d147e4ce7dbd/ed4d4f0a/IMG_9036.JPG)",,,"6.4.2020
+- Beta2 Functionality: There should be a message that appears when she completes all 9 market infos that tells her Market Savvy Complete or something of that nature. And let's her know a new card is starting. ",,,,,,
+Hamburger Menu: Give us feedback button,New Feature,High,7,,11/14/2019 2:54pm,261,,"Adam Galper,Nicole Johnson",,We would like to have a way for the user to easily give us feedback. Nicole and Giselle discussed a give us feedback button as an option,,Discussed in a meeting between Nicole and Giselle on 20190903,,Nicole Johnson,,
+Hamburger Menu: Graphics to show how to add entries,New Feature,High,7,,11/14/2019 8:34pm,260,,"Adam Galper,Giselle Galper,Nicole Johnson",,Graphics at the end of conversations that show the user how to add an entry to the career section. Right now this includes how to add an accomplishment or shoutout and how to add a pitch.,,From the backlog,,Nicole Johnson,,
+MULTIOPTION combo box,New Feature,High,8,,11/14/2019 8:11pm,260,,Adam Galper,,"Example Question:
+Choose three verbs that are typical for you in your current job (or hoped for next job).
+
+We list 8 options, and ask the user to select 3 verbs, but we also want her to have the option to add her own verb or verbs.",,AttributeSpec Pitch.actionVerb,Content,Nicole Johnson,,
+COLLECTIONS: Filter for creating collections,New Feature,High,8,,1/3/2020 1:23pm,211,,Adam Galper,,"A filtering feature for creating collections in the editing view. Filtering options: date range, company, job title, project, client.  Would this be a filter that applied to all views?",,,,Nicole Johnson,,
+Function: to count up the responses to a MULTIOPTION attribute,New Feature,High,8,,3/2/2020 3:01pm,152,,Adam Galper,,"Example Statement: Chances are you are incredibly busy outside of your regular job. 
+
+Do any of these describe you? Check all that apply.
+
+Being social, doing a hobby, or volunteering
+Taking care of someone else
+Staying or getting healthy and fit
+Volunteering
+Taking classes or working a side gig
+Working a side gig
+Doing a hobby
+Other  Free Response
+
+Responses: R: more than 2 “Scratch that. You are insanely busy. Great that you are making time to show up for your career. That’s more than most people for sure.”
+R: 1 or 2: “Good for you for making time to show up for your career. You are already doing more than most people.” 
+Skip: Maybe we got that wrong. Insanely busy? NP “Good for you for making time to show up for your career. You are already doing more than most people.” 
+
+Source: https://docs.google.com/document/d/1eQoiv1QHcZv8IWqCdHAMSKHKSntv3LkzT6NdD31unoA/edit?usp=sharing",,Writing content we realized this would be a helpful function to have.,Content,Nicole Johnson,,
+SATISFACTION STATS: A filter for filtering entries by type of work,New Feature,High,8,,6/1/2020 2:10pm,61,,,,"Similar to the filter functionality we propose for Collections. We have to figure out how that works. Would the filter happen in the Satisfaction Stats view, in Career, or in both?",,Slack message with Giselle on 5/29/2020,,Nicole Johnson,,
+CAREER SECTION: Filtering functionality for sorting/viewing entries in the career section,New Feature,High,9,,11/25/2019 12:35pm,250,,Adam Galper,,"Basic filter capabilities so the user can filter different entries based on time, job title, or company name. ",,Meeting on 11/24/19 with Giselle,,Nicole Johnson,,
+Add attachments to Accomplishment and Shoutout entries.,New Feature,High,9,,12/23/2019 12:32pm,222,,Adam Galper,,We would like for her to be able to add attachments to an Accomplishment or Shoutout entry. Attachments include: screen shots and/or saved files of email or slack positive statements.,,Slack sent from Giselle to AdamG/Nicole group on 12/21,,Nicole Johnson,,
+ALL OF APP: Add the Apple convention of Big text that moves up into the header when the page is scrolled. See Apple notes or Apple messages. ,New Feature,High,9,,5/28/2020 6:19pm,64,,,,"We could do this throughout the app. So the Career section would have Career in big text about Recents, and then when the user scrolls the page and the big Career heading is no longer visible on the page, the Career heading moves into the title bar. 	",,,,Nicole Johnson,,
+Ranking feature for within attributes,New Feature,High,10,,3/2/2020 3:07pm,152,,,,A feature for ranking options in an attributeSpec. Example: Rank this list in priority from highest to lowest for what matters most to you. ,,,Content,Nicole Johnson,,
+Satisfaction collection notices,New Feature,High,11,,11/14/2019 3:01pm,261,,"Nicole Johnson,Giselle Galper",,"See this link: https://docs.google.com/a/cheaseed.com/document/d/1SpkNUvMBuVJOFNKKQeaPT-ZArJpFkDSOx86k5YBopjs/edit?disco=AAAADwW-MdU
+
+User entered satisfaction, so what notices does she get? 
+20 responses for each type of 6 situations maybe. 
+For prototype identify the 6 situations, and 1 message each. 
+Read them independently, and then decide what the rules could be. 
+If a human had to do it, what would a human do?
+Fewest rules possible. 
+10 rules at the most
+Develop a methodology of rules. ",,Meeting between Giselle and Nicole on 20190919,,Nicole Johnson,,
+Attaching guides and being able to open them in an entry,New Feature,High,13,,1/10/2020 4:08pm,203,,Nicole Johnson,,"When she is adding an entry in the career section, either from the career section or from another place in the app, we'd like to be able to have a guide attached(embedded?) into the entry, so if she needs a reminder or information, she can click on a ? or a little icon and get a pop-up guide or some tidbit of information. ",,,,Nicole Johnson,,
+Tie the Accomplishment Entry and Satisfaction entry together by adding the same Type of Work segment buttons to the Details of an Accomplishment entry,New Feature,High,13,,3/19/2020 7:17am,135,,,,We'd like to have the Accomplishment and Satisfaction entry tied together in some way. One idea is to have the same 8 type of work segment buttons in the Details of the Accomplishment entry. ,,,,,,
+Activity Review Complete cards are not in place yet,New Feature,High,14,,1/13/2020 5:07pm,200,,,,"Activity Review Complete cards. We never got that far. It's supposed to generate an in process group for her to finish, but it just stops there.",,,,,,
+Activity review just goes away (in process) when leave screen.,New Feature,High,14,,1/16/2020 3:12pm,198,,,,"In the Activity Review, when a card is added to the In Process section from the Add Activity page, the card doesn't remain in In Process if I exit from the Activity Review section to go to another section. ",,,,,,
+PINNED: Pin gear to Pinned section,New Feature,High,15,,2/5/2020 5:51am,178,,,,,,,,,,
+DRAWER: Do we want to change how the evidence and sources are presented? ,New Feature,High,20,,3/23/2020 3:55pm,131,,,"4.14.2020 We can remove the bounce of the drawer, so there are more than 3 states
+
+3.23.2020 three states: fully closed, partially open, fully open.
+
+If we get to define the partially open/mid state, then only leave it open enough to see the first heading.","4.13.2020 We discussed eliminating the use of the drawer, and adding the sources as a textBlock beneath the Statement. We tossed around the idea of using a different background color for the sources to differentiate the two. 
+
+NJ concerns are: what changes to the system do we have to make to make the transition? The way sources are currently organized and linked to statements in Airtable is convenient, would we have to make changes?
+-----------------------------------------------------------
+Original Issue 3.23.2020: Keep the evidence drawer peek-a-boo open so that it’s obvious the drawer is there
+
+The drawer is currently set up so that if I close the drawer all the way on screen 2/15, the drawer remains closed on all future screens. 
+
+We propose that if the user closes the drawer on screen 2/15, and swipes to screen 3/15, that the drawer re-open so it is obvious to that there is more in the drawer for screen 3/15.
+
+We did not determine if the drawer should remain closed if she reaches the end of the chat and chooses to swipe backwards. I propose that if she swipes backwards in a chat to go to a previous statement, and she closed the drawer on the statement, then the drawer remains closed. Similarly, if she leaves it open on a statement, then we leave the drawer open when she swipes back to that statement.",,,,,,
+"HOMEPAGE: Generate landing pages for other Quotes, Community, Feedback on home page  ",Content Fix,High,21,,1/13/2020 8:07am,201,,,,"(Favorite Accomplishments and Shoutouts, Takeaways, Quotes (similar to Takeways), and Community Feed (that's the waves) and this is Ally notices. Need to decide whether we also have community ""feed""
+
+In the takeaway landing page, the Takeaways populate a list of vertical tiles that are shareable.",,,,,,
+"HOMEPAGE: In community feed in Inspiration section, have a landing page for survey or quiz results",New Feature,High,21,,2/10/2020 12:34pm,173,,,,,,,,,,
+Dynamic survey results that update automatically based on user responses,New Feature,High,21,,3/2/2020 5:25am,152,,,6.9.2020 We want to start this in Beta 2. This issue is complex because we need a data explorer. See meeting notes. ,,,,,,,
+Recent History section,New Feature,High,22,,2/10/2020 5:44pm,172,,,,Add a Recent History section to the homepage. This section will be populated with all recent chats or other recently visited pages within the app. ,,,,Nicole Johnson,,
+Including celebration sounds in the app (beta 2 or beta 3?),New Feature,High,22,,3/23/2020 3:36pm,131,,,3.23.2020 Giselle says before feedback. But probably beta 2 or 3,In the Welcome chat (https://docs.google.com/document/d/1OMb7u2dleGr5r1bN4uGvZOvzMzxij2SRE6vA0wvOgL0/edit) we introduce 4 sounds the user can select from as their congratulatory sound. Is this possible for Beta 1?,,,,Nicole Johnson,,
+Schema for Challenge,New Feature,High,30,In progress,11/13/2019 8:38am,262,,Adam Galper,"GSG comments: Do we need to provide more clarification here? I was thinking that group was secondary, but we might need it for enterprise. ","Need to modify commitment schema. we discussed. Challenge schema is in the Career Schema spreadsheet 
+
+https://docs.google.com/spreadsheets/d/1x_d3qe_ptz3DQ6wGLDVqLbNjOz7FZ1_bauhkSXD8hbw/edit?usp=sharing",,,,,,
+Achievements,New Feature,High,30,,1/13/2020 5:49pm,200,,"Adam Galper,Nicole Johnson,Giselle Galper",,Need to discuss this,,,,Giselle Galper,,
+Gamification ,New Feature,High,30,,1/13/2020 5:50pm,200,,"Adam Galper,Nicole Johnson,Giselle Galper",,We have provided rules. Will find. 50 points any action. 2x with supporter/ally. 3x timely.,,,,Giselle Galper,,
+CAREER: Examples in the career section when a user comes in first time,New Feature,High,40,,6/26/2020 2:34pm,36,,,,"The examples would be read-only. The examples would only display the first time she comes in the app. 
+
+Link to examples: https://docs.google.com/document/d/1awq5CjxNlwQ-YTmGvOwgbovxU5QdrOF1myleo18y1Oo/edit?usp=sharing",,,,,,
+HOMEPAGE: Change Essentials to Chats; Change Feedback to Store,New Feature,High,40,,6/26/2020 2:34pm,36,Screen Shot 2020-06-25 at 11.08.43 AM.png (https://dl.airtable.com/.attachments/bb41b1254f3da7f59c45f6455a98b44f/9f01d601/ScreenShot2020-06-25at11.08.43AM.png),,,"We will move Feedback into Career after Beta 1. The details of how we will structure Career to fit Feedback tbd. 
+- One idea is to have the segment button header as we do in Chats.",,,,,,
+Static tutorial done on paper,New Feature,High,40,,6/26/2020 2:58pm,36,,,,,,,,,,
+CONDITIONAL FORMATTING: conditional formatting within a statement to evaluate if a chat has been completed before,New Feature,High,40,,7/17/2020 11:15pm,14,,Nicole Johnson,,"Example
+Bias & Your Ask, Statement 3
+https://docs.google.com/document/d/1hW1apVKvPqATHUstwA2dhDrmkhONZXi9ijBPo4v025Y/edit?usp=sharing",,,,,,
+WITHIN CHAT: images into the text of chats.,New Feature,High,40,,7/18/2020 12:28am,14,,,,,,,,,,
+NOTIFICATIONS: Think about changing the Messages/Notifications icon and name,UI Fix,High,40,,7/18/2020 12:29am,14,,,,,,,,,,
+"TOPICS: Ignore Articles in Alphabetizing the Topics. The Pitch, should be in P. The Ask, should be in A. 
+",New Feature,High,40,,7/18/2020 12:32am,14,,,,,,,,,,
+NEWSFLASH ICON: Make the newslfash icon dynamic so it lights up in chea pink or another attention grabbing color when she has a new NewsFlash. ,New Feature,High,40,,7/18/2020 12:36am,14,,,,,,,,,,
+MANAGE CHATS ON HOMEPAGE: Think about a long press for the cards on the homepage for the user to be able to manage her playlist and started from the homepage. ,New Feature,High,40,,7/18/2020 12:37am,14,,,,,,,,,,
+WITHIN CHAT: Add to playlist feature from within a chat,New Feature,High,40,,7/20/2020 3:02pm,12,,,,"A feature that allows the user to add a chat from her playlist. 
+
+We might ask her: Would you like to add this chat to your Playlist?",,,,,,
+GOAL ENTRY VIEW: Add a slider menu and/or ellipsis menu to the Motivation and Goal cards in the Goal Entry View. ,New Feature,High,40,,7/21/2020 9:56am,11,,,,Actions we would add to this menu are Edit and Delete,,,,,,
+"MOTIVATION ENTRY from GOAL VIEW: When a user selects ""Add Motivation"" from the Goal View Page, we propose the Goal attribute within the Motivation Form default to the goal the Motivation is associated with. ",New Feature,High,40,,7/21/2020 12:25pm,11,,,,,,,,,,
+EVALUATE SKIP RESPONSES: An easier way to evaluate when a user skips responding to an attribute within a chat,New Feature,High,40,,7/22/2020 11:12am,10,,,,,,,,,,
+SWIPE LEFT MESSAGE: Now Tap Anywhere To Continue: Make it so the Tap Anywhere To Continue Message stops appearing for the user who has consumed at least 3 chats,New Feature,High,40,,7/22/2020 1:14pm,10,,,,"We think the message could get annoying to the user, and once she knows to tap to continue, we dont think we need to continue reminding her. ",,,,,,
+"ELLIPSIS MENU: Add ""Share"" to chat card ",New Feature,High,40,,7/22/2020 5:07pm,9,,,,"We want to add a ""Share"" icon to the outside of the chat cards for Guides and Scripts that are shareable",,,,,,
+SHOP CHEA SEED: Change the UI of the shop front door. see pic for idea,UI Fix,High,40,,7/23/2020 3:14pm,9,"Screen Shot 2020-07-23 at 3.15.24 PM.png (https://dl.airtable.com/.attachments/1ca498c52931bb9dce7dff5a90ef4a7f/70efc598/ScreenShot2020-07-23at3.15.24PM.png),Screen Shot 2020-07-23 at 3.19.05 PM.png (https://dl.airtable.com/.attachments/5523df3117aa0c348815d3a000c37ae6/afbd68ef/ScreenShot2020-07-23at3.19.05PM.png)",,,"chea seed logo + APPAREL
+
+APPAREL in the same font-size in different shade
+
+",,,,,,
+"RESPONSE REQUIRED: For multiOption attributes a user can select ""none of the above"" from a list of options while also selecting another option from the list. ",New Feature,High,40,,7/23/2020 10:03pm,8,,,,PROPOSAL: User can't select none of the above in a multioption attribute if she has other options selected. Or can she get a toast or some type of message?,,,,,,
+ICONS: Streamline the use of outline and filled icons,UI Fix,High,40,,7/24/2020 11:39am,8,"Screen Shot 2020-07-24 at 11.42.13 AM.png (https://dl.airtable.com/.attachments/51d297875a7fa9af833d0a9ce5b2f576/7842ea58/ScreenShot2020-07-24at11.42.13AM.png),Screen Shot 2020-07-24 at 11.42.23 AM.png (https://dl.airtable.com/.attachments/4f22a734df468122821a719433d10ecb/f30bd57a/ScreenShot2020-07-24at11.42.23AM.png),Screen Shot 2020-07-24 at 11.42.34 AM.png (https://dl.airtable.com/.attachments/fafbe046d3fa2a2a5c8b02520b4c72ce/380e17e3/ScreenShot2020-07-24at11.42.34AM.png)",,,"Some icons in the ellipsis menus of Entry Types in Career are filled and others are outlined. We should streamline the use of the outlined and filled icons. 
+
+We originally proposed that generic actions are filled icons, and chea seed specific actions are outlined. ",,,,,,
+"VIDEO PLAYBACK: For youtube video clips, is it possible to have closed caption on? subtitles?",New Feature,High,40,,7/27/2020 2:57pm,5,,,,https://www.npgroup.net/blog/are-your-mobile-apps-ada-compliant-adhering-to-accessibility-regulations/,,,,,,
+onboarding quizzes create records in career section,New Feature,Normal,1,,11/13/2019 6:34am,262,,"Giselle Galper,Nicole Johnson",,flesh out how the onboarding quizzes create records in the workbook,,,"Onboarding,Content",Nicole Johnson,,
+Add days to expire column in content airtable,Unsure,Normal,1,,11/25/2019 12:25pm,250,,"Adam Galper,Nicole Johnson",,"In our 11/14/19 meeting we discussed the rules for interaction between UpNext and the Playlist. We decided we would add a ""Days to Expire"" column to the Conversation table in Airtable. 
+
+Additional notes from the meeting: 
+Can we support having different expiration dates for different content?",,discussed in 11/14/19 meeting,,Nicole Johnson,,
+"In optional detail, generally, not prepopulating with last default",Build Issue,Normal,1,,12/2/2019 11:27am,243,,,,,,,,,,
+Different last screen for quizzes,New Feature,Normal,2,,12/6/2019 12:43pm,239,"Screen Shot 2019-12-06 at 12_53_23 PM.png (https://dl.airtable.com/.attachments/14a5e946af958d1a9fdb6e43fe5c88c6/dd7e576f/ScreenShot2019-12-06at12_53_23PM.png),Screen Shot 2019-12-06 at 12_53_33 PM.png (https://dl.airtable.com/.attachments/90504efbbe02e323d0f093fb0691ae8f/0a82675f/ScreenShot2019-12-06at12_53_33PM.png)","Adam Galper,Giselle Galper,Nicole Johnson",,"For quizzes: Instead of a Takeaway at the end, have results on a percentage basis with her(users) answers circled. INSTEAD GO TO RESULTS PAGE OR NEXT QUIZ AS OPTIONS FOR RULES ",,,,,,
+Inspiration tile logos need larger for share and lock unlock,UI Fix,Normal,3,,1/13/2020 8:12am,201,,,,Size of icons is too small.,,,,,,
+Homepage: UI for Inspiration Card,UI Fix,Normal,3,,2/5/2020 5:55am,178,Screen Shot 2020-01-30 at 4.57.47 PM.png (https://dl.airtable.com/.attachments/ed40490df6ef677b3f66f698dd8c7385/ca4beef1/ScreenShot2020-01-30at4.57.47PM.png),Adam Galper,"3/25/2020: By Beta 3 or 4 we will want the black stitching. Do we need dollars for this?
+
+3/9/2020: If not possible to have the black stitching, then that's ok for now.","An image is attached to show how we envision this tile looking since we aren't sure on the font size that should be used in the app, but the image is the look we are going for.
+
+Background is the color: F8F6EA
+The text is aligned to the right. 
+Each sentence is a new line.
+""Showing up for your career."" - in black, Nunito Sans Black
+""That's"" - in black, Nunito Sans Black
+""badass"" - in pink #E0098A, Nunito Sans Black
+#cheaCareer - right aligned, in Nunito Sans Extra Bold. In smaller font than the text above
+
+Currently,  a 1pt, black, dashed border with rounded edges. 
+
+Match the width of the Inspiration tile to the width of the Metrics cards.",,,,,,
+Gear Section add shopping ability,New Feature,Normal,4,,1/13/2020 8:23am,201,,,,,,,,,,
+Rule for Engagement Content ,New Feature,Normal,4,,1/13/2020 12:59pm,201,,,,Does not list as series until she's seen it in engagement?,,,,,,
+Schema for Review Prep (new). In ask? - part of Feedback Hub,Content Fix,Normal,9,,11/13/2019 8:36am,262,,,,Need to discuss where this fits best. ,,,Supporters,,,
+Accountability Partner (Supporter),New Feature,Normal,9,,11/24/2019 12:23pm,251,IMG_8407.JPG (https://dl.airtable.com/.attachments/39701c3054d63d3cdef23bf9e7cae6fd/cab7ad4f/IMG_8407.JPG),Adam Galper,,"When a user creates a challenge, she should be able to add an accountability partner during the creation of the challenge. She should also be able to later add an accountability partner. 
+
+The accountability partner should be sent a request if they are new. 
+The accountability partner should be able to high five the user back. ",,Discussed in Supporter Meeting on 11/7/19 as well as in Nicole & Giselle meeting on 11/24/19,Supporters,Nicole Johnson,,
+Update a supporter,New Feature,Normal,9,,12/2/2019 8:16am,243,IMG_8408.JPG (https://dl.airtable.com/.attachments/09f7f4f269999e554fef42383175b613/ee6085b3/IMG_8408.JPG),"Adam Galper,Nicole Johnson,Giselle Galper",,,,,,,,
+Supporter feature: Sharing a career plan,New Feature,Normal,9,,12/4/2019 4:06pm,240,,"Nicole Johnson,Giselle Galper,Adam Galper",,Question posed by Giselle in Slack on 11/28 - How can she share a career plan?,,Slack message from Giselle on 11/28/19,Supporters,Nicole Johnson,,
+change supporter to Ally in the app,Content Fix,Normal,9,,12/11/2019 6:08am,234,,,,We want to change Supporter to Ally or Allies in the app,,Giselle,Supporters,Nicole Johnson,,
+"""I practiced a pitch"" displays as name on Pitch Feedback request",Functional Bug,Normal,9,,12/23/2019 12:51pm,222,,,,"""I practiced a pitch"" displays as the name in the field beneath You have requested feedback for: 
+
+We want the name of the Pitch to display in that field. ",,Testing the app on 12/20,Supporters,Nicole Johnson,,
+Supporter View for Supporter,New Feature,Normal,9,,1/13/2020 1:23pm,201,,,,,,,Supporters,,,
+Mark Chat as Complete when she arrives at Takeaway statement,Nit,Normal,13,,2/10/2020 1:28pm,173,,,,"I propose we mark chats complete once the user swipes to the takeaway statement or last statement of the chat.
+
+Concern from 2/17/20: Chats to Complete could end up very cluttered if the user stops the chat at the takeaway screen or on the screen right before. We might need a ""swipe to complete"" message at the bottom of the last couple of screens so we train her to swipe all the way through so the chat doesn't end up in her chats to complete.",,,,Nicole Johnson,,
+"Support has 3 types  Feedback, Update and Accountability",New Feature,Normal,20,,1/13/2020 5:59pm,200,,,,,,,,,,
+"DEMO MODE: SERIES, RULES, ETC. ",New Feature,Normal,20,,1/16/2020 9:58am,198,,"Nicole Johnson,Giselle Galper,Adam Galper",,"Sample of content IN UPNEXT from a company channel and also advertising platform (-channel P&G women’s group meeting 6 pm on a card as a sample: sample group channel   -advertising events GIRLBOSS 2020 conference ), as well as rule for demo. Right now my login is what we are using. Maybe we need a sample user? ",,,,,,
+DEMO ICON for channel feed?,UI Fix,Normal,20,,1/16/2020 10:20am,198,,,,"icon below inspiration to indication ""iRelaunch"" ""FairyGodBoss"" etc.... showing potential of dashboard",,,,,,
+COMPLETION CARD of chat with rule for next ,New Feature,Normal,20,,1/16/2020 10:36am,198,,,,For each chat make suggestion for next in series through completion with full list available and then if complete NEXT series. ,,,,,,
+COMPLETION CARD: celebratory UI static,New Feature,Normal,20,,1/16/2020 10:41am,198,,,,Use static celebratory colors confetti at first. (Later new feature active like Just works),,,,,,
+COMPLETION CARD: celebratory dynamic confetti falling,New Feature,Normal,20,,1/16/2020 10:42am,198,,,,move from static to falling like just works,,,,,,
+SHARE to Ally: update,New Feature,Normal,20,,1/16/2020 11:15am,198,,,,"Update should allow for (over time) private one on one, group and public. She should be able to customize her update message with or without entry (attached / not attached) . This way people can shoutout themselves on the community feed (that would be public or group) or Ally feed (also maybe that is group). ",,,,,,
+UPDATE CARDS to show what type of CAREER ENTRY. Use colors instead of icons?,New Feature,Normal,20,,1/16/2020 11:22am,198,,,,"Updated 2/25/2020: We want to use some identifier on the carousel cards in the Career Section to show the type of entry: Accomplishment, Shoutout, Pitch, Ask, Satisfaction, Market Info, Goal, Motivation, Objective
+
+Original text: At a glance for an update or even favorites, how will she know what type of entry it is. Can have word, but that's cumbersome? use color somehow?",,,,,,
+Share from camera roll to chea seed app,New Feature,Normal,20,,1/29/2020 1:44pm,185,,,,"We would like to have functionality to share a picture or video from either an iPhone or android camera roll to the chea seed app. 
+
+This will require our user being able to select where to share the picture or video to. We imagine it will be something like slack where she chooses which section in the career section to share to, and then which entry within that section. ",,,,,,
+Ability to select multiple Types of Work when in a Satisfaction entry because one task she completes could include multiple types of work,New Feature,Normal,20,,3/25/2020 2:41pm,129,,,,,,,,Nicole Johnson,,
+SETTINGS FOR ENTRY VIEW HEADER GRID: A user can set what she wants to see in the Header Grid of an Entry View,New Feature,Normal,20,,5/18/2020 11:32pm,74,,,,We propose a user be able to have settings functionality to set (maybe with toggle switches) which attributes she wants included in the Header Grid of Entries with an Entry View.,,,,Nicole Johnson,,
+DYNAMIC TAKEAWAY TILES: takeaway statements that include conditional formatting or ending with takeaway statements that contain logic,New Feature,Normal,25,,7/28/2020 10:52pm,3,,,,"We'd like to add conditional formatting within a statement for a takeaway, or have multiple takeaway statements with logic based on user responses. 
+
+currently, conditional formatting within a takeaway statement is not supported.",,,,,,
+"Users can publicly share their records (accomplishments, shoutouts, taking the credit)",New Feature,Low,,,11/14/2019 3:21pm,261,,"Giselle Galper,Nicole Johnson",,She can see that others are publicly sharing their entries in the community,,From Nicole and Giselle meetings notes dated 20191014,,Nicole Johnson,,
+?UGC,New Feature,Low,,,12/2/2019 7:08am,243,,"Nicole Johnson,Giselle Galper",,"how do you do a ""glossier""; get users to post and then ""if good enough"" reposted to main feed. ""It is a simple yet powerful flywheel strategy:
+
+Build customizable products that people want to create content around + share
+Share and repost the content that their customers make
+Encourage even more, and better, UGC
+High-quality and prolific Glossier content creators are invited to become ambassadors for the brand online. They get a specialized coupon code that they can use to promote Glossier products, and then they receive a cut of all the sales that go through that code.",,Giselle added to the idea tracker in Airtable on 11/28,,Nicole Johnson,,
+Group Support,New Feature,Low,1,,12/23/2019 2:41pm,222,,,,"Group Support [FUTURE FEATURE, WILL . Some Cheaseed users are part of existing support or women’s groups connected to their industries, colleges, grad schools or social networks. [i picture some weird kumbaya circle of hands] With Cheaseed you can gain momentum by being accountable to this group through monetary commitment to donate money to the group, to a prize and/or to a cause. As always. You choose exactly what the group sees and the level of your accountability. Just remember, as the number of eyes goes up and the detail of commitment improves, so will your hard work to improve your career.
+Do you have a group you’d like to join you on Cheaseed?
+FIGURE OUT HOW TO JOIN GROUP EASILY.
+
+3. Group Support Unknown/strangers.[This probably would b more weave in later when there are more users]  ala Houzz
+Not initially available",,from content tracker airtable. original source is the 2018 supporter docs,Supporters,Nicole Johnson,,
+Thumbs Up or Thumbs Down a chat on the completion card,New Feature,Low,18,,1/15/2020 12:09pm,199,,,,,,,,,,
+Schema for networking,New Feature,Low,20,,12/4/2019 4:25pm,240,,"Giselle Galper,Nicole Johnson",,,,20191125 Nicole and Giselle PM,,Nicole Johnson,,
+schema for awards,Content Fix,Low,20,,12/9/2019 1:28pm,236,,Giselle Galper,,,,,,Nicole Johnson,,
+Teammate and Sponsor Schemas,New Feature,Low,100,,12/4/2019 4:23pm,240,,"Giselle Galper,Nicole Johnson",,,,20191125 Nicole and Giselle PM meeting,Supporters,Nicole Johnson,,
+Include Apple health period feed in satisfaction and/or allow entry in satisfaction,New Feature,Low,100,,1/16/2020 10:25am,198,,,,how to leverage other apps question ...,,,,,,
+Channel,New Feature,Low,100,,2/6/2020 10:55am,177,,"Giselle Galper,Nicole Johnson",,"A company can white label it for their audience
+A company can have a channel on it for their audience
+In her settings she can turn it on or off
+It would be the company’s content that they either pay us to write or that they write and add to their channel. 
+We have to have groups, group feed, group community, etc. 
+
+previous message from gsg: i can’t wait til we have “group” to show and we can go to these organizations and offer ourselves as a channel
+i suppose this notion of a channel may need to go into airtable at the bottom.",,,,,,

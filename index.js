@@ -5,7 +5,13 @@ const { Octokit } = require("@octokit/rest")
 
 const GIT_REPO_OWNER = 'anandsathe67'
 const GIT_REPO = 'GithubIssuesImport'
-const PERSONAL_ACCESS_TOKEN = '9f3c726967fd547c2892921b4e1fd41017d26ac6'
+const PERSONAL_ACCESS_TOKEN = '62954646624f53f4f0622531f78d01f5c9c046d5'
+const CSV_FILE_NAME = 'test3.csv'
+// Just using strings without context gets confusing when an issue is tagged with a number of labels
+// The prefixes give some context to the label
+const PRIORITY_PREFIX = "Priority:"
+const STATUS_PREFIX = "Status:"
+const ISSUE_TYPE_PREFIX = "Issue Type:"
 
 const octokit = new Octokit({
     auth: PERSONAL_ACCESS_TOKEN,
@@ -18,9 +24,14 @@ const octokit = new Octokit({
         timeout: 0
     }
 })
-const userMap = { 'Adam Galper': 'agalper', 'Anand Sathe': 'anandsathe67' }
+// Map names to github users. TODO - look up based on full name and org
+// for example octakit.search.users({q='fullname:Anand Sathe+org:Cheaseed'})
+const userMap = new Map([
+    ['Adam Galper', 'agalper'], 
+    ['Anand Sathe', 'anandsathe67']
+])
 
-const filePath = path.join(__dirname, 'test2.csv')
+const filePath = path.join(__dirname, CSV_FILE_NAME)
 
 fs.readFile(filePath, async (error, data) => {
     if (error) {
@@ -28,9 +39,9 @@ fs.readFile(filePath, async (error, data) => {
     }
     const parsedData = await neatCsv(data)
 
-    console.log(parsedData)
+    console.log("CSV File Data:" + parsedData)
 
-    const milestones = Array.from(new Set(parsedData.map(csvIssue => {
+   /* const milestones = Array.from(new Set(parsedData.map(csvIssue => {
         return csvIssue.Status
     }).filter(function (val) { return val != null && val != "" })))
 
@@ -46,14 +57,18 @@ fs.readFile(filePath, async (error, data) => {
 
         console.log(key + ' = ' + value)
     }
-
+*/
     for (const csvIssue of parsedData) {
+        const githubUsers = csvIssue['Assigned to'].split(',').map(name => {
+            return userMap.get(name)
+        })
+        console.log("Github Users = " + JSON.stringify(githubUsers))
         const issue = await createIssue(csvIssue,
-            milestoneMap.get(csvIssue.Status),
-            ['anandsathe67']) //[userMap.get(csvIssue['Assigned to'])])
+            //milestoneMap.get(csvIssue.Status),
+            ['anandsathe67']) // githubUsers
 
         console.log("Issue created:" + issue)
-        console.log("Issue Number: " + issue.data.number)
+        //console.log("Issue Number: " + issue.data.number)
         if(csvIssue['Progress Comments']) {
             const commentCreate = await octokit.issues.createComment({
                 owner: GIT_REPO_OWNER,
@@ -61,7 +76,7 @@ fs.readFile(filePath, async (error, data) => {
                 issue_number: issue.data.number,
                 body: csvIssue['Progress Comments']
             })
-            console.log(commentCreate)
+            console.log("Comment Created:" + commentCreate)
         }
 
     }
@@ -72,19 +87,21 @@ async function createMilestone(title) {
         owner: GIT_REPO_OWNER,
         repo: GIT_REPO,
         title: title
-
     })
-    console.log("MilestoneData Number = " + milestoneData.data.number)
+    //console.log("MilestoneData Number = " + milestoneData.data.number)
     return milestoneData
 }
 
-async function createIssue(csvIssue, milestoneId, assignees) {
+async function createIssue(csvIssue, /*milestoneId,*/ assignees) {
     let labels = []
     if (csvIssue.Priority) {
-        labels.push('Priority:' + csvIssue.Priority)
+        labels.push(PRIORITY_PREFIX + csvIssue.Priority)
     }
     if (csvIssue['Issue Type']) {
-        labels.push(csvIssue['Issue Type'])
+        labels.push(ISSUE_TYPE_PREFIX + csvIssue['Issue Type'])
+    }
+    if (csvIssue.Status) {
+        labels.push(STATUS_PREFIX + csvIssue.Status)
     }
     const issue = await octokit.issues.create({
         owner: GIT_REPO_OWNER,
@@ -92,7 +109,7 @@ async function createIssue(csvIssue, milestoneId, assignees) {
         title: csvIssue.Name,
         body: csvIssue.Description,
         assignees: assignees,//[userMap[csvIssue['Assigned to']]]
-        milestone: milestoneId,
+        //milestone: milestoneId,
         labels: labels
     })
     return issue

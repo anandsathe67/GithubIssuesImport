@@ -1,0 +1,11 @@
+Name,Issue Type,Priority,Rank,Status,Opened Time,Days old,Attachments,Assigned to,Progress Comments,Description,Duplicates?,Bug source,Associated features,Created by,Date Completed,Minutes To Completion
+"SHARE: Ability to Share a CHEA SEED content (Statement, Tile....) to operating system (social media, texting or email)",New Feature,Critical,1,In progress,1/13/2020 8:25 AM,201,,Adam Galper,,Getting direction from Vamsi ETA Friday evening,,,,,,
+"SHARE GUIDES and SCRIPTS: sharing out the guides and scripts; 
+web page landings for scripts and guides at cheaseed.com so we can count hits by each item",New Feature,Critical,1,In progress,1/13/2020 12:14 PM,201,,,"4.17.2020 We propose adjustments to the button at the bottom of the screen. We'd like two buttons. 
+- A button on the left that is chea seed pink (#E0098A) with bold, black text. The text for this button is ""Join our beta"" 
+- A button on the right side of the page that is black with bold white text. This button will say ""Learn about chea seed"" 
+- A question we have is which pages will these buttons take you to?
+----------------------
+Share a link of a dynamic page that displays a single statement in a frame; include tracking of page views
+
+6.30.2020 Update to track at firebase and mixpanel.",,,,,,,
