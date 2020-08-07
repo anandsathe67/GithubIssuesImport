@@ -4,9 +4,9 @@ const neatCsv = require('neat-csv')
 const { Octokit } = require("@octokit/rest")
 
 const GIT_REPO_OWNER = 'anandsathe67'
-const GIT_REPO = 'GithubIssuesImport'
-const PERSONAL_ACCESS_TOKEN = '62954646624f53f4f0622531f78d01f5c9c046d5'
-const CSV_FILE_NAME = 'test3.csv'
+const GIT_REPO = 'TestCSVImport'
+const PERSONAL_ACCESS_TOKEN = '086a00396423da5da9ec241115f7e99d63fceb84'
+const CSV_FILE_NAME = 'issues.csv'
 // Just using strings without context gets confusing when an issue is tagged with a number of labels
 // The prefixes give some context to the label
 const PRIORITY_PREFIX = "Priority:"
@@ -61,7 +61,8 @@ fs.readFile(filePath, async (error, data) => {
     for (const csvIssue of parsedData) {
         const githubUsers = csvIssue['Assigned to'].split(',').map(name => {
             return userMap.get(name)
-        })
+        }).filter(Boolean)
+        
         console.log("Github Users = " + JSON.stringify(githubUsers))
         const issue = await createIssue(csvIssue,
             //milestoneMap.get(csvIssue.Status),
@@ -108,7 +109,7 @@ async function createIssue(csvIssue, /*milestoneId,*/ assignees) {
         repo: GIT_REPO,
         title: csvIssue.Name,
         body: csvIssue.Description,
-        assignees: assignees,//[userMap[csvIssue['Assigned to']]]
+        assignees: assignees,
         //milestone: milestoneId,
         labels: labels
     })

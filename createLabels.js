@@ -3,8 +3,8 @@
  * Priority, Status and Issue Type
  */
 const GIT_REPO_OWNER = 'anandsathe67'
-const GIT_REPO = 'GithubIssuesImport'
-const PERSONAL_ACCESS_TOKEN = '62954646624f53f4f0622531f78d01f5c9c046d5'
+const GIT_REPO = 'TestCSVImport'
+const PERSONAL_ACCESS_TOKEN = '086a00396423da5da9ec241115f7e99d63fceb84'
 const CSV_FILE_NAME = 'issues.csv'
 
 // Just using strings without context gets confusing when an issue is tagged with a number of labels
@@ -54,7 +54,7 @@ fs.readFile(filePath, async (error, data) => {
             return csvIssue.Priority
         }))
     ).filter(Boolean)
-    
+
     priorityMap = new Map()
     priorities.forEach(function (priority) {
         priorityMap.set(PRIORITY_PREFIX + priority, colorMap[priority])
