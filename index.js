@@ -1,3 +1,8 @@
+/**
+ * Script to import a CSV file and create Github issues. title, description
+ * and comments are mapped to the respective git issue entities. Status, Priority
+ * and Issue Type are modeled as labels
+ */
 const fs = require('fs')
 const path = require('path')
 const neatCsv = require('neat-csv')
@@ -62,13 +67,13 @@ fs.readFile(filePath, async (error, data) => {
         const githubUsers = csvIssue['Assigned to'].split(',').map(name => {
             return userMap.get(name)
         }).filter(Boolean)
-        
+
         console.log("Github Users = " + JSON.stringify(githubUsers))
         const issue = await createIssue(csvIssue,
             //milestoneMap.get(csvIssue.Status),
             ['anandsathe67']) // githubUsers
 
-        console.log("Issue created:" + issue)
+        console.log("Issue created:" + JSON.stringify(issue))
         //console.log("Issue Number: " + issue.data.number)
         if(csvIssue['Progress Comments']) {
             const commentCreate = await octokit.issues.createComment({
@@ -77,7 +82,7 @@ fs.readFile(filePath, async (error, data) => {
                 issue_number: issue.data.number,
                 body: csvIssue['Progress Comments']
             })
-            console.log("Comment Created:" + commentCreate)
+            console.log("Comment Created:" + JSON.stringify(commentCreate))
         }
 
     }
