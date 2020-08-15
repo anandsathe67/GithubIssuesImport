@@ -8,10 +8,11 @@ const path = require('path')
 const neatCsv = require('neat-csv')
 const { Octokit } = require("@octokit/rest")
 
-const GIT_REPO_OWNER = 'anandsathe67'
-const GIT_REPO = 'TestCSVImport'
-const PERSONAL_ACCESS_TOKEN = '086a00396423da5da9ec241115f7e99d63fceb84'
-const CSV_FILE_NAME = 'issues.csv'
+const GIT_REPO_OWNER = 'cheaseed'
+const GIT_REPO = 'cheaseed-prototype'
+//set the token value below before running the script
+const PERSONAL_ACCESS_TOKEN = 'xxx'
+const CSV_FILE_NAME = 'issues-Completed Issues Remaining.csv'
 // Just using strings without context gets confusing when an issue is tagged with a number of labels
 // The prefixes give some context to the label
 const PRIORITY_PREFIX = "Priority:"
@@ -33,7 +34,9 @@ const octokit = new Octokit({
 // for example octakit.search.users({q='fullname:Anand Sathe+org:Cheaseed'})
 const userMap = new Map([
     ['Adam Galper', 'agalper'], 
-    ['Anand Sathe', 'anandsathe67']
+    ['Anand Sathe', 'anandsathe67'],
+    ['Nicole Johnson', 'johnsonnicole'],
+    ['Giselle Galper', 'gsgalper']
 ])
 
 const filePath = path.join(__dirname, CSV_FILE_NAME)
@@ -44,7 +47,7 @@ fs.readFile(filePath, async (error, data) => {
     }
     const parsedData = await neatCsv(data)
 
-    console.log("CSV File Data:" + parsedData)
+    console.log("CSV File Data:" + JSON.stringify(parsedData))
 
    /* const milestones = Array.from(new Set(parsedData.map(csvIssue => {
         return csvIssue.Status
@@ -71,7 +74,7 @@ fs.readFile(filePath, async (error, data) => {
         console.log("Github Users = " + JSON.stringify(githubUsers))
         const issue = await createIssue(csvIssue,
             //milestoneMap.get(csvIssue.Status),
-            ['anandsathe67']) // githubUsers
+            githubUsers)
 
         console.log("Issue created:" + JSON.stringify(issue))
         //console.log("Issue Number: " + issue.data.number)
@@ -81,6 +84,24 @@ fs.readFile(filePath, async (error, data) => {
                 repo: GIT_REPO,
                 issue_number: issue.data.number,
                 body: csvIssue['Progress Comments']
+            })
+            console.log("Comment Created:" + JSON.stringify(commentCreate))
+        }
+        if(csvIssue.Attachments) {
+            const commentCreate = await octokit.issues.createComment({
+                owner: GIT_REPO_OWNER,
+                repo: GIT_REPO,
+                issue_number: issue.data.number,
+                body: ("Attachments: \n" + csvIssue.Attachments.replace(/,/g, ', '))
+            })
+            console.log("Comment Created:" + JSON.stringify(commentCreate))
+        }
+        if(csvIssue['Closed'] == "1") {
+            const commentCreate = await octokit.issues.createComment({
+                owner: GIT_REPO_OWNER,
+                repo: GIT_REPO,
+                issue_number: issue.data.number,
+                body: ("Date Completed:" + csvIssue['Date Completed'])
             })
             console.log("Comment Created:" + JSON.stringify(commentCreate))
         }
@@ -109,7 +130,7 @@ async function createIssue(csvIssue, /*milestoneId,*/ assignees) {
     if (csvIssue.Status) {
         labels.push(STATUS_PREFIX + csvIssue.Status)
     }
-    const issue = await octokit.issues.create({
+    let issue = await octokit.issues.create({
         owner: GIT_REPO_OWNER,
         repo: GIT_REPO,
         title: csvIssue.Name,
@@ -118,6 +139,14 @@ async function createIssue(csvIssue, /*milestoneId,*/ assignees) {
         //milestone: milestoneId,
         labels: labels
     })
+    if(csvIssue['Closed'] == "1") {
+        issue = await octokit.issues.update({
+            owner: GIT_REPO_OWNER,
+            repo: GIT_REPO,
+            issue_number: issue.data.number,
+            state: "closed"
+        })
+    }
     return issue
 }
 

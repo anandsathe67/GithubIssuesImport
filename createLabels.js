@@ -2,10 +2,11 @@
  * Script to create labels based on unique values in the columns
  * Priority, Status and Issue Type
  */
-const GIT_REPO_OWNER = 'anandsathe67'
-const GIT_REPO = 'TestCSVImport'
-const PERSONAL_ACCESS_TOKEN = '086a00396423da5da9ec241115f7e99d63fceb84'
-const CSV_FILE_NAME = 'issues.csv'
+const GIT_REPO_OWNER = 'cheaseed'
+const GIT_REPO = 'cheaseed-prototype'
+// set the token value below before running the script
+const PERSONAL_ACCESS_TOKEN = 'xxx'
+const CSV_FILE_NAME = 'issuesLatest.csv'
 
 // Just using strings without context gets confusing when an issue is tagged with a number of labels
 // The prefixes give some context to the label
